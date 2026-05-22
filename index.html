@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauã Brito | Portifolio</title>
+    <link rel="stylesheet" href="style copy.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Pojetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <!--main-->
+    <main id="home">
+        <!--cabeçalho principal-->
+        <section class="hero">
+            <img src="pokemon.jpg" alt="foto de perfil" class="profile-img">
+            <h1>Kauã Guilherme Brito Silva</h1>
+            <p>Estudante de Programação</p>
+
+        </section>
+
+        <section id="sobre" class="about-section">
+            <div class="conteiner">
+                <h2>Sobre mim</h2>
+                <p>shlkhkahfldhksbvlkasdbhhfklshvlndskhfaleyhfawlhdlha</p>
+            </div>
+        </section>
+
+        <section id="projetos" class="projects-section">
+            <h2>Meus Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="gtr.jpg" alt="Capa projeto1">
+                    <h3>aaaaaaaaa</h3>
+                    <p>O que ele é e o que ele faz</p>
+                    <a href="#" target="_blank">Ver projetos</a>
+
+                    <div class="project-card">
+                        <img src="s13.jpg" alt="Capa projeto2     ">
+                        <h3>aaaaaaaaa222</h3>
+                        <p>O que ele é e o que ele faz</p>
+                        <a href="#" target="_blank">Ver projetos</a>
+                    </div>
+                </div>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" placeholder="Sua mensagem"></textarea>
+                </div>
+                <button type="submit">whatsapp</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- integração de whatsapp-->
+    <script>
+        const form = document.getElementById('contact-form')
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const phoneNumber = "5511900000000";
+
+            const text = `Óla meu nome é ${name}.${message}`;
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank')
+        });
+    </script>
+
+
+</body>
+
+</html>
